@@ -1,75 +1,94 @@
 # Documentation Site Generator
 
-## Pages & Features
+Generate and publish beautiful documentation sites from your content.
 
-### 1. Dashboard
-- Active documentation sites list
-- Recent edits & publish activity
-- Build status indicators
-- Quick stats (total pages, contributors)
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
 
-### 2. Sites
-- Create new documentation site (name, slug, theme)
-- Site list with status (live, draft, archived)
-- Site settings (domain, favicon, logo, description)
-- Delete / archive site
+## Tech Stack
 
-### 3. Page Editor
-- Rich text / markdown editor with live preview
-- Page hierarchy (sidebar tree with drag-and-drop ordering)
-- Code block syntax highlighting (language selector)
-- Image & file embedding
-- Callout blocks (info, warning, tip, danger)
-- Table of contents auto-generation
-- Frontmatter editing (title, description, tags)
-- Version history & restore
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
 
-### 4. Navigation Builder
-- Sidebar navigation tree editor
-- Drag-and-drop page ordering & nesting
-- Group pages into sections / categories
-- External link items
-- Top navigation bar configuration
+## Getting Started
 
-### 5. Theme & Customization
-- Choose from pre-built themes (light, dark, branded)
-- Custom CSS override
-- Logo, favicon, and colors
-- Font selection
-- Homepage layout builder
+```bash
+npm install
+cp .env.example .env.local
+# Set VITE_CONVEX_URL to your deployment URL
+npm run dev
+```
 
-### 6. Search
-- Full-text search across all pages
-- Search results with highlighted snippets
-- Search analytics (popular queries, no-results)
+## License
 
-### 7. Versioning
-- Create versioned documentation (v1, v2, v3)
-- Version switcher in published site
-- Archive old versions
-- Diff view between versions
+MIT © Mehdi Nabhani
 
-### 8. API Reference (Auto-gen)
-- Import OpenAPI / Swagger spec
-- Auto-generate API endpoint documentation
-- Try-it-out request builder
-- Response schema visualization
+---
 
-### 9. Collaboration
-- Multi-author editing
-- Page review & approval workflow
-- Comments & suggestions
-- Contributor list
+<details>
+<summary>📋 Original Feature Spec</summary>
 
-### 10. Publishing & Hosting
-- One-click publish / deploy
-- Custom domain setup
-- SSL certificate auto-provisioning
-- Build logs
+# {{APP_TITLE}}
 
-### 11. Settings
-- Site metadata & SEO
-- Access control (public, authenticated, invite-only)
-- Redirect rules
-- Analytics integration (Google Analytics, Plausible)
-- Notification preferences
+{{APP_DESCRIPTION}}
+
+Part of [The Mehdi Verse](https://github.com/mxn2020) — a collection of open-source sample applications.
+
+## Tech Stack
+
+- **Frontend**: React 19 + TypeScript + Vite
+- **Backend**: [Shared Convex deployment](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+- **Auth**: Email/password via `@convex-dev/auth`
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js 22+
+- A running [shared Convex backend](https://github.com/mxn2020/the-mehdi-verse-convex-backend)
+
+### Setup
+
+```bash
+# Install dependencies
+npm install
+
+# Create .env.local with your Convex URL
+cp .env.example .env.local
+# Edit .env.local and set VITE_CONVEX_URL to your deployment URL
+
+# Start the dev server
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) to view the app.
+
+## Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start Vite dev server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run typecheck` | Run TypeScript type checking |
+
+## Project Structure
+
+```
+src/
+  main.tsx              # Entry point with ConvexAuthProvider
+  App.tsx               # Auth routing (Landing vs Dashboard)
+  App.css               # Component styles
+  index.css             # Global styles & design tokens
+  components/
+    Landing.tsx          # Marketing/landing page
+    SignIn.tsx           # Auth form (sign-in/sign-up)
+    Dashboard.tsx        # Authenticated app shell
+api.ts                   # Convex API types (from shared backend)
+```
+
+## License
+
+MIT © Mehdi Nabhani
+
+</details>
